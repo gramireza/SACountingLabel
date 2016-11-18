@@ -76,8 +76,9 @@ open class SACountingLabel: UILabel {
         case .currency:
             let number = NumberFormatter()
             number.numberStyle = .currency
+            number.locale = Locale(identifier: "es_CL")
             number.maximumFractionDigits = 0
-            self.text = number.string(from: NSNumber(value:value))// "\(Int(value))"
+            self.text = number.string(from: NSNumber(value:value))
         case .int:
             self.text = "\(Int(value))"
         case .float:
