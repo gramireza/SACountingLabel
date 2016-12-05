@@ -78,7 +78,8 @@ open class SACountingLabel: UILabel {
             number.numberStyle = .currency
             number.locale = Locale(identifier: "es_CL")
             number.maximumFractionDigits = 0
-            let strBefore = number.string(from: NSNumber(value:value))?.replacingOccurrences(of: "$", with: "")
+            
+            let strBefore = number.string(from:NSNumber(floatLiteral: Double(value)))?.replacingOccurrences(of: "$", with: "")
             self.attributedText = getTotalAttributtedText(total: strBefore!)
             
         case .int:
